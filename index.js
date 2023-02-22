@@ -2,7 +2,6 @@ import jsdom from "jsdom"
 import fs from "fs"
 import imageFetch from "./imageFetch.js"
 const { JSDOM } = jsdom
-
 const url = "http://192.168.1.160/test/"
 //const url = "https://socialclub.rockstargames.com/gtav/VehiclesAjax"
 const categories = ["cycles", "boats"]
@@ -30,19 +29,28 @@ Promise.all(promises)
             if(err) console.error(err)
         })
 
-        const vehicleUrls = []
+        let vehicleNames = []
 
         vehicleList.forEach(category => {
             Object.keys(category).forEach(key => category[key].map(item => {
-                vehicleUrls.push(item.Url)
+                vehicleNames.push(item.Url)
             }))
         })
 
-        fs.writeFile('vehicleUrls.txt', vehicleUrls.toString(), err => {
+        fs.writeFile('vehicleNames.txt', vehicleNames.toString(), err => {
             if(err) console.error(err)
         })
 
-        imageFetch([], url)
+        fs.readFile('vehicleNames.txt', 'utf8', (error, data) => {
+            if (error) {
+              console.error(error)
+              return
+            }
+            vehicleNames = [...data]
+        })
+
+        imageFetch(['bmx', 'cruiser', 'test'], url)
+        //imageFetch(vehicleNames, url)
 
     })
     .catch(err => console.error(err))

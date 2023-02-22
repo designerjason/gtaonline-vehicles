@@ -1,19 +1,19 @@
 import fs from "fs"
 
-//for testing
-const image = "bmx"
+export default function imageFetch(vehicleArr, sourceUrl) {
 
-export default function imageFetch(imageArr, sourceUrl) {
+  const downloadImage = async (vehicleName, sourceUrl) => {
 
-  const downloadImage = (image, sourceUrl) => {
-    // function to fetch single image from url
-    // save the image to the docs/images
+    fetch(sourceUrl)
+    .then(res => res.arrayBuffer())
+    .then(arrayBuffer => {
+      fs.writeFileSync(`./docs/images/${vehicleName}.png`, Buffer.from(arrayBuffer))
+    })
+    .then(() => console.log('\x1b[32m%s\x1b[0m', `***  [${vehicleName}] has been downloaded!  ***`))
+    .catch(e => console.error(e))
   }
 
-  const downloadAllImages = () => {
-    // function to iterate over imageArr
-    // run downloadImage for each iteration
-  }
-
-  downloadImage(image, `${sourceUrl}images/${image}.png`)
+  vehicleArr.forEach(vehicle => {
+    return downloadImage(vehicle, `${sourceUrl}images/${vehicle}.png`)
+  })
 }
