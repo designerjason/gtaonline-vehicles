@@ -25,7 +25,7 @@ Promise.all(promises)
         })
     })
     .then(() => {
-        fs.writeFile('docs/vehicleDB.js', JSON.stringify(vehicleList), err => {
+        fs.writeFile('docs/js/vehicleDB.json', `${JSON.stringify(vehicleList)}`, err => {
             if(err) console.error(err)
         })
 
