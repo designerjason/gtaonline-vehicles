@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["../../src/scss/bundle.scss"],"names":[],"mappings":"AAAA,KACI","file":"bundle.min.css","sourcesContent":["body {\r\n    background-color: aqua;\r\n}"]}
