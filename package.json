@@ -2,41 +2,18 @@
   "name": "gtaonline-vehicles",
   "version": "1.0.0",
   "description": "A record of vehicles available in gta online. Which ones do you own?",
-  "watch": {
-    "build:js": {
-      "patterns": [
-        "src/js",
-        "src/vue"
-      ],
-      "extensions": [
-        "js",
-        "vue"
-      ]
-    },
-    "build:css": {
-      "patterns": [
-        "src/scss"
-      ],
-      "extensions": "js"
-    }
-  },
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build:css": "sass src/scss/bundle.scss docs/css/bundle.min.css --load-path=node_modules --style=compressed --embed-sources",
-    "build:js": "webpack-cli --config ./webpack.config.cjs",
-    "server": "node ./node_modules/http-server/bin/http-server ./docs -c-1 -o /index.html out",
     "scrape": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "npm-watch",
-    "//": "npm run dev: run this for dev work. Will run a server, watch for file changes and compile when needed.",
-    "dev": "concurrently \"npm:server\" \"npm:watch\" "
+    "build": "webpack --config ./webpack.config.cjs",
+    "dev": "webpack-dev-server --open"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/designerjason/gtaonline-vehicles.git"
   },
-  "author": "",
+  "author": "designerjason",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/designerjason/gtaonline-vehicles/issues"
@@ -46,15 +23,20 @@
   "devDependencies": {
     "@babel/core": "^7.21.5",
     "@babel/preset-env": "^7.21.5",
+    "autoprefixer": "^10.4.14",
     "babel-loader": "^9.1.2",
-    "concurrently": "^7.6.0",
-    "http-server": "^14.1.1",
+    "css-loader": "^6.7.3",
+    "cssnano": "^6.0.1",
+    "html-webpack-plugin": "^5.5.1",
     "jsdom": "^21.1.0",
-    "npm-watch": "^0.11.0",
+    "mini-css-extract-plugin": "^2.7.5",
+    "postcss-loader": "^7.3.0",
     "sass": "^1.62.1",
+    "sass-loader": "^13.2.2",
     "vue-loader": "^17.0.1",
     "webpack": "^5.81.0",
-    "webpack-cli": "^5.0.1"
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.13.3"
   },
   "dependencies": {
     "vue": "^3.2.47"
