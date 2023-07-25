@@ -2,19 +2,20 @@ import jsdom from "jsdom"
 import fs from "fs"
 import imageFetch from "./imageFetch.js"
 const { JSDOM } = jsdom
-const url = "http://192.168.1.160/test/"
-//const url = "https://socialclub.rockstargames.com/gtav/VehiclesAjax"
-const categories = ["cycles", "boats"]
-// const categories = ["Boats","Commercial","Compacts","Coupes","Cycles","Emergency","Helicopters","Industrial","Military","Motorcycles","Muscle","Off-Road","Open Wheel","Planes","Sedans","Service","Sports", "Sports Classics","Super","SUVs","Utility","Vans"]
+//const url = "http://192.168.1.160/test/"
+//const urlImg = "http://192.168.1.160/test/images/"
+const url = "https://socialclub.rockstargames.com/gtav/VehiclesAjax/"
+const urlImg = "https://s.rsg.sc/sc/images/games/GTAV/vehicles/screens/mp/main/"
+const categories = ["boats","commercial","compacts","coupes","cycles","emergency","helicopters","industrial","military","motorcycles","muscle","off-road", "open-wheel", "planes","sedans","service","sports", "sports-classics","super","suvs","utility","vans"]
 const vehicleList = []
-const promises = categories.map(item => JSDOM.fromURL(`${url}${item}.html`));
+const promises = categories.map(item => JSDOM.fromURL(`${url}?slot=Freemode&category=${item}`));
 
 Promise.all(promises)
     .then(jdoms => {
         // Handle the resulting JSDOM objects
         jdoms.forEach(dom => {
-            const document = dom.window.document
-            const scriptEl = document.querySelector('script').textContent
+            const htmlPage = dom.window.document
+            const scriptEl = htmlPage.querySelector('script').textContent
             const json = JSON.parse(scriptEl)
             const vehicleCollections = json.VehiclesJson.VehicleCollections
             const category = json.category
@@ -49,8 +50,6 @@ Promise.all(promises)
             vehicleNames = [...data]
         })
 
-        imageFetch(['bmx', 'cruiser', 'test'], url)
-        //imageFetch(vehicleNames, url)
-
+        imageFetch(vehicleNames, urlImg)
     })
     .catch(err => console.error(err))

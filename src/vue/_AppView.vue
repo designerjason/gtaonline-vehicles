@@ -44,7 +44,7 @@
         <div class="VehicleList">
             <!-- return filtered list -->
             <div class="Vehicle" v-if="currentFilter" v-for="vehicle in filteredDb[currentFilter]" :key="vehicle">
-                <img class="Vehicle__image" :src="`/images/${vehicle.Url}.png`" width="200" height="200" :alt="vehicle.Name">
+                <img class="Vehicle__image" :src="`/images/${vehicle.Url}.jpg`" width="200" height="200" :alt="vehicle.Name">
                 <h2 class="Vehicle__name">{{ vehicle.Name }}</h2>
                 <!--
                     vehicle.Type
