@@ -6,5 +6,27 @@
 }
 
 .Vehicle {
+    aspect-ratio: 200/113;
     background-color: aqua;
+    position: relative;
+}
+
+.Vehicle__image {
+    display: block;
+    height: auto;
+    width: 100%;
+}
+
+.Vehicle__name {
+    background-image: linear-gradient(to top, rgba(0,0,0,0.6) 30% , rgba(0,0,0,0) 100%);
+    bottom: 0;
+    color: #fff;
+    display: block;
+    font-size: 14px;
+    left: 0;
+    margin: 0;
+    padding: 20px 8px 8px 8px;
+    position: absolute;
+    right: 0;
+    text-shadow: 1px 1px 1px rgba(0,0,0, 0.8);
 }
