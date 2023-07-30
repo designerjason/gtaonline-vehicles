@@ -6,8 +6,11 @@
   "type": "module",
   "scripts": {
     "scrape": "node index.js",
-    "build": "webpack --config ./webpack.config.cjs",
-    "dev": "webpack-dev-server --open"
+    "dev": "vite --open",
+    "build": "vite-ssg build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "format": "prettier --write src/"
   },
   "repository": {
     "type": "git",
@@ -21,22 +24,17 @@
   "homepage": "https://github.com/designerjason/gtaonline-vehicles#readme",
   "browserslist": "> 0.25%, not dead",
   "devDependencies": {
-    "@babel/core": "^7.21.5",
-    "@babel/preset-env": "^7.21.5",
-    "autoprefixer": "^10.4.14",
-    "babel-loader": "^9.1.2",
-    "css-loader": "^6.7.3",
-    "cssnano": "^6.0.1",
-    "html-webpack-plugin": "^5.5.1",
+    "@rushstack/eslint-patch": "^1.3.2",
+    "@unhead/vue": "^1.1.33",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "@vue/eslint-config-prettier": "^8.0.0",
+    "eslint": "^8.46.0",
+    "eslint-plugin-vue": "^9.16.0",
     "jsdom": "^21.1.0",
-    "mini-css-extract-plugin": "^2.7.5",
-    "postcss-loader": "^7.3.0",
+    "prettier": "^3.0.0",
     "sass": "^1.62.1",
-    "sass-loader": "^13.2.2",
-    "vue-loader": "^17.0.1",
-    "webpack": "^5.81.0",
-    "webpack-cli": "^5.0.1",
-    "webpack-dev-server": "^4.13.3"
+    "vite": "^4.4.7",
+    "vite-ssg": "^0.23.1"
   },
   "dependencies": {
     "vue": "^3.2.47"

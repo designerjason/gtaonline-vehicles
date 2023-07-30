@@ -4,6 +4,15 @@ A simple, straightforward app that lists all available vehicles in GTA5. A work 
 # prerequisites to run locally
 node js with node package manager
 
+
+## Recommended IDE Setup
+
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+
+## Customize configuration
+
+See [Vite Configuration Reference](https://vitejs.dev/config/).
+
 ## Getting the Data
 Script currently works by scraping data directly from rockstar games website. Vehicle collection is sourced specifically from online free mode.
 

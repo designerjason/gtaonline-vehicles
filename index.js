@@ -2,8 +2,6 @@ import jsdom from "jsdom"
 import fs from "fs"
 import imageFetch from "./imageFetch.js"
 const { JSDOM } = jsdom
-//const url = "http://192.168.1.160/test/"
-//const urlImg = "http://192.168.1.160/test/images/"
 const url = "https://socialclub.rockstargames.com/gtav/VehiclesAjax/"
 const urlImg = "https://s.rsg.sc/sc/images/games/GTAV/vehicles/screens/mp/main/"
 const categories = ["boats","commercial","compacts","coupes","cycles","emergency","helicopters","industrial","military","motorcycles","muscle","off-road", "open-wheel", "planes","sedans","service","sports", "sports-classics","super","suvs","utility","vans"]
@@ -26,7 +24,7 @@ Promise.all(promises)
         })
     })
     .then(() => {
-        fs.writeFile('docs/js/vehicleDB.json', `${JSON.stringify(vehicleList)}`, err => {
+        fs.writeFile('public/data/vehicleDB.json', `${JSON.stringify(vehicleList)}`, err => {
             if(err) console.error(err)
         })
 

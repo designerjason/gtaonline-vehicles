@@ -5,7 +5,7 @@ export default function imageFetch(vehicleArr, sourceUrl) {
     fetch(sourceUrl)
     .then(res => res.arrayBuffer())
     .then(arrayBuffer => {
-      fs.writeFileSync(`./docs/images/${vehicleName}.jpg`, Buffer.from(arrayBuffer))
+      fs.writeFileSync(`./public/images/${vehicleName}.jpg`, Buffer.from(arrayBuffer))
     })
     .then(() => console.log('\x1b[32m%s\x1b[0m', `***  [${vehicleName}] has been downloaded!  ***`))
     .catch(e => console.error(e))
