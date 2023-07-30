@@ -1,9 +1,11 @@
 <script>
 import VehicleSelect from '../src/components/VehicleSelect.vue'
+import VehicleItem from '../src/components/VehicleItem.vue'
 
 export default {
         components: {
-            VehicleSelect
+            VehicleSelect,
+            VehicleItem
         },
         data() {
             return {
@@ -21,7 +23,6 @@ export default {
         watch: {
             favourites: {
                 handler(arr) {
-                    console.log('favourit selected')
                     localStorage.setItem("gta5-fav-vehicles", JSON.stringify(arr))
                 },
                 deep: true
@@ -99,14 +100,14 @@ export default {
         </dialog>
 
         <div class="VehicleList">
-            <!-- return filtered list -->
-            <div class="Vehicle" v-if="currentFilter" v-for="vehicle in filteredDb[currentFilter]" :key="vehicle">
-                <span v-if="vehicle.Website">BUY</span>
-                <button @click="getVehicleInfo(vehicle)">info</button>
-                <input type="checkbox" :value="vehicle.Url" v-model="favourites" />
-                <img class="Vehicle__image" :src="`images/${vehicle.Url}.jpg`" :alt="vehicle.Name">
-                <h2 class="Vehicle__name">{{ vehicle.Name }}</h2>
-            </div>
+            <VehicleItem
+                v-if="currentFilter"
+                v-for="vehicle in filteredDb[currentFilter]"
+                :key="vehicle"
+                :vehicle="vehicle"
+                :favourites="favourites"
+                @get-vehicle-info="getVehicleInfo"
+            />
         </div>
     </div>
 </template>
