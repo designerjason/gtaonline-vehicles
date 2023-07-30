@@ -7,7 +7,8 @@ module.exports = {
   mode: 'production',
   entry: './src/js/main.js',
   output: {
-    path: path.resolve(__dirname, "./docs"),
+    path: path.resolve(__dirname, "/docs"),
+    publicPath: './',
     filename: 'js/bundle.min.js'
   },
   devServer: {
