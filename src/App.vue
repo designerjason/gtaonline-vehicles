@@ -1,11 +1,13 @@
 <script>
 import VehicleSelect from '../src/components/VehicleSelect.vue'
 import VehicleItem from '../src/components/VehicleItem.vue'
+import IconClose from '../src/components/icons/IconClose.vue'
 
 export default {
         components: {
             VehicleSelect,
-            VehicleItem
+            VehicleItem,
+            IconClose
         },
         data() {
             return {
@@ -64,37 +66,51 @@ export default {
 <template>
     <div>
         <VehicleSelect :vehicles="vehicleTypes" @filter="filter" />
-        <dialog ref="vehicleInfo" class="vehicleInfo">
-            <button @click="closeModal()">close</button>
-            <div v-if="currentVehicle" class="vehicleInfo__details">
-                <div>
-                    <h2>{{ currentVehicle.Name }}</h2>
-                    <strong>Type:</strong> {{ currentVehicle.Type }}
-                    <strong>Seats:</strong> {{ currentVehicle.Seats }}
-                </div>
+        
+        <dialog ref="vehicleInfo" class="VehicleInfo">
+            <div class="VehicleInfo__inner">
+                <button class="VehicleInfo__close" @click="closeModal()">
+                    <span class="sr-only">Close dialog</span>
+                    <IconClose />
+                </button>
+                <div v-if="currentVehicle" class="VehicleInfo__details">
+                    <h2 class="VehicleInfo__name">{{ currentVehicle.Name }}</h2>
+                    <img class="VehicleInfo__image" :src=" `images/${currentVehicle.Url}.jpg`" :alt="currentVehicle.Name" />
+                    <div class="VehicleInfo__stats">
+                        <div>
+                            <strong class="VehicleInfo__type">{{ currentVehicle.Type }}</strong>
+                            <strong>Seats:</strong> {{ currentVehicle.Seats }}
+                        </div>
 
-                <div>
-                    <h3>Stats (out of 100)</h3>
-                    <strong>Speed:</strong> {{ Math.round(currentVehicle.Speed) }}<br>
-                    <strong>Acceleration:</strong> {{ Math.round(currentVehicle.Acceleration) }}<br>
-                    <strong>Braking:</strong> {{ Math.round(currentVehicle.Braking) }}<br>
-                    <strong>Handling:</strong> {{ Math.round(currentVehicle.Handling) }}
-                </div>
-                
-                <div>
-                    <span v-if="currentVehicle.Personal">Personal</span>
-                    <span v-if="currentVehicle.Premium">Premium</span>
-                    <span v-if="currentVehicle.Moddable">Moddable</span>
-                    <span v-if="currentVehicle.SuperModdable">Super Moddable</span>
-                </div>
+                        <div>
+                            <table class="VehicleInfo__table">
+                                <tr><th>Speed</th><td>{{ Math.round(currentVehicle.Speed) }}</td></tr>
+                                <tr><th>Acceleration</th><td>{{ Math.round(currentVehicle.Acceleration) }}</td></tr>
+                                <tr><th>Braking</th><td>{{ Math.round(currentVehicle.Braking) }}</td></tr>
+                                <tr><th>Handling</th><td>{{ Math.round(currentVehicle.Handling) }}</td></tr>
+                            </table>
+                            <h4 class="VehicleInfo__table-text">( Stats out of 100 )</h4>
+                        </div>
+                        
+                        <div class="VehicleInfo__tags">
+                            <span class="VehicleInfo__tag" v-if="currentVehicle.Personal">Personal</span>
+                            <span class="VehicleInfo__tag" v-if="currentVehicle.Premium">Premium</span>
+                            <span class="VehicleInfo__tag" v-if="currentVehicle.Moddable">Moddable</span>
+                            <span class="VehicleInfo__tag" v-if="currentVehicle.SuperModdable">Super Moddable</span>
+                        </div>
+                    </div>
 
-                <div v-if="currentVehicle.ForSale">
-                    <strong>Purchaseable at:</strong><br> {{ currentVehicle.Website }}<br>
-                    <strong>Cost:</strong> {{ currentVehicle.Cost }}<br>
-                </div>
-                
-                <div v-if="currentVehicle.Sellable">
-                    Can be sold for <strong>{{ currentVehicle.SellPrice }}</strong>
+                    <div v-if="currentVehicle.ForSale || currentVehicle.Sellable" class="VehicleInfo__pricing">
+                        <div v-if="currentVehicle.ForSale">
+                            <span>{{ currentVehicle.Website }}</span>
+                            <div class="VehicleInfo__price"><strong>Purchase Price:</strong> {{ currentVehicle.Cost }}</div>
+                        </div>
+                        
+                        <div v-if="currentVehicle.Sellable">
+                            Can be sold for <strong>{{ currentVehicle.SellPrice }}</strong>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </dialog>

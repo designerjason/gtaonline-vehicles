@@ -1,42 +1,77 @@
 {
   "\u0000plugin-vue:export-helper": [
+    "/gtaonline-vehicles/assets/gtamap-699dac11.jpg"
   ],
   "\u0000vite/modulepreload-polyfill": [
+    "/gtaonline-vehicles/assets/gtamap-699dac11.jpg"
   ],
   "index.html": [
+    "/gtaonline-vehicles/assets/gtamap-699dac11.jpg"
   ],
   "node_modules/@unhead/dom/dist/index.mjs": [
+    "/gtaonline-vehicles/assets/gtamap-699dac11.jpg"
   ],
   "node_modules/@unhead/shared/dist/index.mjs": [
+    "/gtaonline-vehicles/assets/gtamap-699dac11.jpg"
   ],
   "node_modules/@unhead/vue/dist/shared/vue.505b826e.mjs": [
+    "/gtaonline-vehicles/assets/gtamap-699dac11.jpg"
   ],
   "node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js": [
+    "/gtaonline-vehicles/assets/gtamap-699dac11.jpg"
   ],
   "node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js": [
+    "/gtaonline-vehicles/assets/gtamap-699dac11.jpg"
   ],
   "node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js": [
+    "/gtaonline-vehicles/assets/gtamap-699dac11.jpg"
   ],
   "node_modules/@vue/shared/dist/shared.esm-bundler.js": [
+    "/gtaonline-vehicles/assets/gtamap-699dac11.jpg"
   ],
   "node_modules/hookable/dist/index.mjs": [
+    "/gtaonline-vehicles/assets/gtamap-699dac11.jpg"
   ],
   "node_modules/unhead/dist/index.mjs": [
+    "/gtaonline-vehicles/assets/gtamap-699dac11.jpg"
   ],
   "node_modules/vite-ssg/dist/client/single-page.mjs": [
+    "/gtaonline-vehicles/assets/gtamap-699dac11.jpg"
   ],
   "node_modules/vite-ssg/dist/shared/vite-ssg.5912142e.mjs": [
+    "/gtaonline-vehicles/assets/gtamap-699dac11.jpg"
   ],
   "node_modules/vite-ssg/dist/shared/vite-ssg.a009fbf1.mjs": [
+    "/gtaonline-vehicles/assets/gtamap-699dac11.jpg"
   ],
   "src/App.vue": [
+    "/gtaonline-vehicles/assets/gtamap-699dac11.jpg"
   ],
   "src/components/VehicleItem.vue": [
+    "/gtaonline-vehicles/assets/gtamap-699dac11.jpg"
   ],
   "src/components/VehicleSelect.vue": [
+    "/gtaonline-vehicles/assets/gtamap-699dac11.jpg"
+  ],
+  "src/components/icons/IconClose.vue": [
+    "/gtaonline-vehicles/assets/gtamap-699dac11.jpg"
+  ],
+  "src/components/icons/IconFav.vue": [
+    "/gtaonline-vehicles/assets/gtamap-699dac11.jpg"
+  ],
+  "src/components/icons/IconInfo.vue": [
+    "/gtaonline-vehicles/assets/gtamap-699dac11.jpg"
+  ],
+  "src/components/icons/IconLoading.vue": [
+    "/gtaonline-vehicles/assets/gtamap-699dac11.jpg"
+  ],
+  "src/components/icons/IconMoney.vue": [
+    "/gtaonline-vehicles/assets/gtamap-699dac11.jpg"
   ],
   "src/main.js": [
+    "/gtaonline-vehicles/assets/gtamap-699dac11.jpg"
   ],
   "src/scss/main.scss": [
+    "/gtaonline-vehicles/assets/gtamap-699dac11.jpg"
   ]
 }
