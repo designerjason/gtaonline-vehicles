@@ -2,7 +2,7 @@
 
 [https://designerjason.github.io/gtaonline-vehicles/](https://designerjason.github.io/gtaonline-vehicles/)
 
-A simple, straightforward app that lists all available vehicles in GTA5. A work in progress...
+A simple, straightforward app that lists all available vehicles in GTA5.
 
 # prerequisites to run locally
 node js with node package manager
