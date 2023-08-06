@@ -8,7 +8,7 @@
     "scrape": "node index.js",
     "dev": "vite --open",
     "build": "vite-ssg build",
-    "preview": "vite preview",
+    "preview": "vite preview --open",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "format": "prettier --write src/"
   },
