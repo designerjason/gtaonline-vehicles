@@ -25,7 +25,5 @@ In the node terminal run `npm run scrape`, this will create the latest vehicle d
 ## TODO
 - implement sorting by top speed etc
 - option to filter by selectable 'favourite' cars
-- check against GTA build version somewhere (steam?) before doing scrape - save version in file for reference
 - config file for settings
 - code tidy up
-- move dialog to it's own component
