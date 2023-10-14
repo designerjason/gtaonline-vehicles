@@ -1,8 +1,9 @@
 <script>
-import VehicleSelect from '../src/components/VehicleSelect.vue'
-import VehicleInfo from '../src/components/VehicleInfo.vue'
-import VehicleItem from '../src/components/VehicleItem.vue'
-import IconClose from '../src/components/icons/IconClose.vue'
+import VehicleSelect from '@/components/VehicleSelect.vue'
+import VehicleInfo from '@/components/VehicleInfo.vue'
+import VehicleItem from '@/components/VehicleItem.vue'
+import IconClose from '@/components/icons/IconClose.vue'
+import buildVer from '../public/data/buildVer.js'
 
 export default {
     components: {
@@ -14,6 +15,7 @@ export default {
     data() {
         return {
             db: null,
+            buildVer,
             favourites: [],
             filteredDb: null,
             currentFilter: null,
@@ -61,6 +63,13 @@ export default {
             if(savedfavourites) {
                 this.favourites = JSON.parse(savedfavourites)
             }
+        },
+        formatTimeStamp(timestamp) {
+            const date = new Date(timestamp)
+            const year = date.getFullYear()
+            const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed, so add 1
+            const day = String(date.getDate()).padStart(2, '0');
+            return `${year}-${month}-${day}`;
         }
     }
 }
@@ -89,5 +98,8 @@ export default {
                 @get-vehicle-info="getVehicleInfo"
             />
         </div>
+    </div>
+    <div class="margin-top">
+        <small>GTA Online Build Version (Steam): <a href="https://api.steamcmd.net/v1/info/271590"><strong>{{ buildVer.build }}</strong></a> | Last Synced: <strong>{{ formatTimeStamp(buildVer.timestamp) }}</strong></small>
     </div>
 </template>

@@ -6,7 +6,10 @@ function setBuildVer() {
         .then(response => response.json())
         .then(data => {
             const buildId = data.data['271590'].depots.branches.public.buildid
+            const buildTimestamp = Date.now()
+            const exportBuildJs = `export default { build: ${buildId}, timestamp: ${buildTimestamp} }`
             fs.writeFileSync(`./buildVer.txt`, buildId)
+            fs.writeFileSync(`./public/data/buildVer.js`, exportBuildJs)
             resolve(buildId)
         })
         .catch(error => {

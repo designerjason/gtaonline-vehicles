@@ -44,6 +44,9 @@
   "node_modules/vite-ssg/dist/shared/vite-ssg.a009fbf1.mjs": [
     "/gtaonline-vehicles/assets/gtamap-699dac11.jpg"
   ],
+  "public/data/buildVer.js": [
+    "/gtaonline-vehicles/assets/gtamap-699dac11.jpg"
+  ],
   "src/App.vue": [
     "/gtaonline-vehicles/assets/gtamap-699dac11.jpg"
   ],
