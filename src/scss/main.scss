@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Montserrat:wght@300;400;600;700&family=Mulish:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Montserrat:wght@300;400;600;700&family=Mulish:wght@300;400;700;900&display=swap');
 @import './normalize.scss';
 
 :root {
@@ -16,6 +16,22 @@ body {
     background-size: cover;
     font-family: 'Mulish', sans-serif;
     padding: 16px;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.app-title {
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+.app-title-image {
+    border: 2px solid hwb(226 13% 51%);
+    border-radius: 3px;
+    box-shadow: 2px 2px 4px var(--col-black);
 }
 
 .VehicleList {

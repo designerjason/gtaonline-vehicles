@@ -90,9 +90,9 @@ const toggleFavourite = () => {
       box-shadow: 1px 1px 2px var(--col-black);
       box-sizing: border-box;
       display: inline-block;
-      height: 30px;
-      padding: 5px;
-      width: 30px;
+      height: 40px;
+      padding: 8px;
+      width: 40px;
 
       &:hover {
           cursor: pointer;

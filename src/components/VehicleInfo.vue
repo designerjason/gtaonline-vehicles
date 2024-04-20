@@ -76,7 +76,9 @@ watchEffect(() => {
 
 <style lang="scss">
     .VehicleInfo {
-        border: none;
+        background-color: transparent;
+        border: 10px solid transparent;
+        box-sizing: border-box;
         max-width: 550px;
         padding: 0;
         width: 100%;
@@ -87,6 +89,7 @@ watchEffect(() => {
     }
 
     .VehicleInfo__inner {
+        background-color: var(--col-white);
         position: relative;
     }
 

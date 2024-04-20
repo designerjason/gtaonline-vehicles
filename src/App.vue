@@ -33,6 +33,11 @@ export default {
                 localStorage.setItem("gta5-fav-vehicles", JSON.stringify(arr))
             },
             deep: true
+        },
+        showModal: {
+            handler(state) {
+                document.body.classList[state? 'add': 'remove']('overflow-hidden')
+            }
         }
 
     },
@@ -76,6 +81,12 @@ export default {
 </script>
 
 <template>
+    <h1 class="app-title">
+        <img class="app-title-image" src="/images/gtaonlinevehicles.png" alt="gta online vehicles" width="225" height="74" />
+        <span class="sr-only">
+            GTA Online Vehicles
+        </span>
+    </h1>
     <div>
         <VehicleSelect 
             :vehicles="vehicleTypes" 
