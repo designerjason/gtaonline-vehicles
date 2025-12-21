@@ -9,9 +9,7 @@ export default defineConfig({
   build: {
     outDir: 'docs'
   },
-  plugins: [
-    vue(),
-  ],
+  plugins: [vue()],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

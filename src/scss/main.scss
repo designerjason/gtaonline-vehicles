@@ -2,67 +2,67 @@
 @import './normalize.scss';
 
 :root {
-    --col-hotpink: #d6025a;
-    --col-white: #fff;
-    --col-black: #242424;
-    --col-greylight: #cecece;
-    --col-goldtransparent: rgba(236, 181, 0, 0.8);
+  --col-hotpink: #d6025a;
+  --col-white: #fff;
+  --col-black: #242424;
+  --col-greylight: #cecece;
+  --col-goldtransparent: rgba(236, 181, 0, 0.8);
 }
 
 body {
-    background-attachment: fixed;
-    background-image: url('../../public/images/gtamap.jpg');
-    background-position: center;
-    background-size: cover;
-    font-family: 'Mulish', sans-serif;
-    padding: 16px;
+  background-attachment: fixed;
+  background-image: url('../../public/images/gtamap.jpg');
+  background-position: center;
+  background-size: cover;
+  font-family: 'Mulish', sans-serif;
+  padding: 16px;
 }
 
 .overflow-hidden {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .app-title {
-    border-radius: 5px;
-    margin-bottom: 20px;
-    margin-top: 0;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  margin-top: 0;
 }
 
 .app-title-image {
-    border: 2px solid hwb(226 13% 51%);
-    border-radius: 3px;
-    box-shadow: 2px 2px 4px var(--col-black);
+  border: 2px solid hwb(226 13% 51%);
+  border-radius: 3px;
+  box-shadow: 2px 2px 4px var(--col-black);
 }
 
 .VehicleList {
-    display: grid;
-    gap: 8px;
-    grid-auto-flow: row;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  display: grid;
+  gap: 8px;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
 .sr-only {
-    clip: rect(0 0 0 0); 
-    clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap; 
-    width: 1px;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .Icon__loading {
-    left: 50%;
-    margin-left: -16px;
-    margin-top: -16px;
-    position: absolute;
-    top: 50%;
+  left: 50%;
+  margin-left: -16px;
+  margin-top: -16px;
+  position: absolute;
+  top: 50%;
 }
 
 .Icon__fav {
-    margin-top: 1px;
+  margin-top: 1px;
 }
 
 .margin-top {
-    margin-top: 20px;
+  margin-top: 20px;
 }

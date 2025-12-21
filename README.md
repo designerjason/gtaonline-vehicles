@@ -5,8 +5,8 @@
 A simple, straightforward app that lists all available vehicles in GTA5.
 
 # prerequisites to run locally
-node js with node package manager
 
+node js with node package manager
 
 ## Recommended IDE Setup
 
@@ -17,12 +17,14 @@ node js with node package manager
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Getting the latest Data
+
 The script currently works by scraping vehicle data directly from the rockstar games website. Vehicle collection is sourced specifically from online free mode.
 
 In the node terminal run `npm run scrape`, this will create the latest vehicle database and images.
 `npm run dev` to run the app in the browser locally
 
 ## TODO
+
 - implement sorting by top speed etc
 - option to filter by selectable 'favourite' cars
 - config file for settings

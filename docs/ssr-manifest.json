@@ -5,7 +5,7 @@
   "\u0000vite/modulepreload-polyfill": [
     "/gtaonline-vehicles/assets/gtamap-abc9a20f.jpg"
   ],
-  "../../../images/gtaonlinevehicles.png": [
+  "../../../../../images/gtaonlinevehicles.png": [
     "/gtaonline-vehicles/assets/gtamap-abc9a20f.jpg"
   ],
   "index.html": [
