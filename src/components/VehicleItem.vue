@@ -1,5 +1,5 @@
 <script setup>
-import { ref, defineProps } from 'vue'
+import { ref } from 'vue'
 import IconFav from './icons/IconFav.vue'
 import IconInfo from './icons/IconInfo.vue'
 import IconLoading from './icons/IconLoading.vue'

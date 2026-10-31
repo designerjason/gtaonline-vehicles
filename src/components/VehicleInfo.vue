@@ -1,5 +1,5 @@
 <script setup>
-import { ref, defineProps, watchEffect } from 'vue'
+import { ref, watchEffect } from 'vue'
 import IconClose from '../components/icons/IconClose.vue'
 const props = defineProps(['currentVehicle', 'showModal'])
 const vehicleInfo = ref(null)
@@ -46,22 +46,24 @@ watchEffect(() => {
 
           <div>
             <table class="VehicleInfo__table">
-              <tr>
-                <th>Speed</th>
-                <td>{{ Math.round(currentVehicle.Speed) }}</td>
-              </tr>
-              <tr>
-                <th>Acceleration</th>
-                <td>{{ Math.round(currentVehicle.Acceleration) }}</td>
-              </tr>
-              <tr>
-                <th>Braking</th>
-                <td>{{ Math.round(currentVehicle.Braking) }}</td>
-              </tr>
-              <tr>
-                <th>Handling</th>
-                <td>{{ Math.round(currentVehicle.Handling) }}</td>
-              </tr>
+              <tbody>
+                <tr>
+                  <th>Speed</th>
+                  <td>{{ Math.round(currentVehicle.Speed) }}</td>
+                </tr>
+                <tr>
+                  <th>Acceleration</th>
+                  <td>{{ Math.round(currentVehicle.Acceleration) }}</td>
+                </tr>
+                <tr>
+                  <th>Braking</th>
+                  <td>{{ Math.round(currentVehicle.Braking) }}</td>
+                </tr>
+                <tr>
+                  <th>Handling</th>
+                  <td>{{ Math.round(currentVehicle.Handling) }}</td>
+                </tr>
+              </tbody>
             </table>
             <h4 class="VehicleInfo__table-text">( Stats out of 100 )</h4>
           </div>
